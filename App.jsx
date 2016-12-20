@@ -54,14 +54,17 @@ class ProductTable extends React.Component {
 
 class SearchBar extends React.Component {
   constructor(props) {
-    super(props) {
-      this.handleChange = ::this.handleChange;
+    super(props);
+    this.handleChange = ::this.handleChange;
     }
-  }
 
   handleChange() {
-
+    this.props.onUserInput(
+      this.filterTextInput.value,
+      this.inStockOnlyInput.checked
+    );
   }
+
   render() {
     return (
       <form>
